@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>Daftar Pegawai</title>
+    </head>
+    <body>
+        
+        <div th:replace="nav">
+        </div>
+        <div class="container">
+        <div class="row">
+            <h1 class="text-center">Daftar Pegawai</h1>
+            <br></br>
+            <table class="table" width="100%">
+                <thead>
+                    <tr>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Gaji</th>
+                        <th>Telp</th>
+                        <th>Alamat</th>
+                        <th>Jabatan</th>
+                        <th>Role</th>
+                        <th style="text-align: center">
+                            <a class="btn btn-primary btn-sm" th:href="@{/pegawai/form}" title="Tambah Baru">
+                                <i class="fa fa-plus-circle"></i>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                   <form method="get" th:object="${pegawai}">
+                <tbody>
+                    <tr th:each="pegawai : ${daftarPegawai}">
+                        <td th:text="${pegawai.nik}">001</td>
+                        <td th:text="${pegawai.nama}">BOS</td>
+                        <td th:text="${pegawai.username}">001</td>
+                        <td th:text="${pegawai.gaji}">001</td>
+                        <td th:text="${pegawai.telp}">001</td>
+                        <td th:text="${pegawai.alamat}">001</td>
+                        <td th:text="${pegawai.jabatan}">001</td>
+                        <td th:text="${pegawai.role}">001</td>
+                        
+                        <td style="text-align: center">
+                            <a th:href="@{/pegawai/form(id=${pegawai.nik})}" class="btn btn-primary btn-sm" title="Edit">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                                <a th:href="@{/pegawai/delete(id=${pegawai.nik})}" class="btn btn-danger btn-sm" title="Hapus">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                </tbody>
+                </form>
+            </table>
+        </div>
+            </div>
+    </body>
+</html>

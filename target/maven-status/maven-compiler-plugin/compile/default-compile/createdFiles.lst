@@ -1,0 +1,10 @@
+com/pegawai/app/domain/TableUser.class
+com/pegawai/app/domain/Pegawai.class
+com/pegawai/app/service/TableUserService.class
+com/pegawai/app/controller/JabatanController.class
+com/pegawai/app/service/JabatanService.class
+com/pegawai/app/service/PegawaiService.class
+com/pegawai/app/controller/PegawaiController.class
+com/pegawai/app/SecurityConfig.class
+com/pegawai/app/App.class
+com/pegawai/app/domain/Jabatan.class

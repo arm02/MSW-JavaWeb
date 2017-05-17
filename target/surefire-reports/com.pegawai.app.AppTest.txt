@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.pegawai.app.AppTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.88 sec <<< FAILURE! - in com.pegawai.app.AppTest
+testMain(com.pegawai.app.AppTest)  Time elapsed: 0.86 sec  <<< ERROR!
+java.lang.IllegalArgumentException: Args must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:115)
+	at org.springframework.boot.DefaultApplicationArguments.<init>(DefaultApplicationArguments.java:41)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.pegawai.app.App.main(App.java:19)
+	at com.pegawai.app.AppTest.testMain(AppTest.java:68)
+
+testSpringDataDialect(com.pegawai.app.AppTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<null> but was:<org.thymeleaf.dialect.springdata.SpringDataDialect@1f021e6c>
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.failNotEquals(Assert.java:329)
+	at junit.framework.Assert.assertEquals(Assert.java:78)
+	at junit.framework.Assert.assertEquals(Assert.java:86)
+	at junit.framework.TestCase.assertEquals(TestCase.java:253)
+	at com.pegawai.app.AppTest.testSpringDataDialect(AppTest.java:95)
+
+testAddViewControllers(com.pegawai.app.AppTest)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.pegawai.app.App.addViewControllers(App.java:24)
+	at com.pegawai.app.AppTest.testAddViewControllers(AppTest.java:81)
+

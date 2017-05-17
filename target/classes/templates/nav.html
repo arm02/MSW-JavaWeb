@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>MSW</title>
+    <!-- Core CSS - Include with every page -->
+    <link th:href="@{/assets/plugins/bootstrap/bootstrap.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link th:href="@{/assets/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <!-- Page-Level CSS -->
+    <!--<link th:href="@{/assets/plugins/morris/morris-0.4.3.min.css}" rel="stylesheet" />-->
+</head>
+<body>
+    
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+
+        <!-- Collapsed Hamburger -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- Branding Image -->
+
+        <a class="navbar-brand">Manage Salary
+        </a>
+      </div>
+        
+            <ul class="nav navbar-nav navbar-right">
+          <li><a th:href="@{/pegawai/list}"><span class="glyphicon glyphicon-user">
+          </span>&nbsp;&nbsp;<b>Salary</b></a></li>
+          <li><a th:href="@{/jabatan/list}"><span class="glyphicon glyphicon-signal">
+          </span>&nbsp;&nbsp;<b>Jabatan</b></a></li>
+          <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-out">
+          </span>&nbsp;&nbsp;<b>Logout</b></a></li>
+          
+          </ul>
+        
+    </div>
+</nav>   
+
+
+    <script th:src="@{/assets/plugins/jquery-1.10.2.js}"></script>
+    <script th:src="@{/assets/plugins/moment.js}"></script>
+    <script th:src="@{/assets/plugins/bootstrap/bootstrap.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+    <script th:src="@{/assets/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{/assets/plugins/pace/pace.js}"></script>
+    <!--<script th:src="@{/assets/scripts/siminta.js}"></script>-->
+    <!-- Page-Level Plugin Scripts-->
+    <!--<script th:src="@{/assets/plugins/morris/raphael-2.1.0.min.js}"></script>-->
+    <!--<script th:src="@{/assets/plugins/morris/morris.js}"></script>-->
+    <!--<script th:src="@{/assets/scripts/dashboard-demo.js}"></script>-->
+
+</body>
+
+</html>

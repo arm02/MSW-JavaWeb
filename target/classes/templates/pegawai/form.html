@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>MSW</title>
+    </head>
+    <body>
+        <div th:replace="nav"></div>    
+        <div class="container">
+            <div class="row">
+        <section layout:fragment="content">
+            <h1 class="page-header">MSW - Salary</h1>
+
+            <form class="form-horizontal" method="post" th:object="${pegawai}">
+                <div class="form-group" th:classappend="${#fields.hasErrors('nik')} ? 'has-error'">
+                    <label for="kode" class="col-sm-2 control-label">NIK</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:field="*{nik}"
+                               class="form-control" id="id" placeholder="Nik" 
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('nik')}, data-errormessage=${#fields.errors('nik')}"/>
+                    </div>
+                </div>
+                <div class="form-group" th:classappend="${#fields.hasErrors('nama')} ? 'has-error'">
+                    <label for="nama" class="col-sm-2 control-label">Nama</label>
+                    <div class="col-sm-10">
+                        <input type="text" 
+                               th:field="*{nama}"
+                               class="form-control" id="nama" placeholder="Nama" 
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('nama')}, data-errormessage=${#fields.errors('nama')}"/>
+                    </div>
+                </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('username')} ? 'has-error'">
+                    <label for="username" class="col-sm-2 control-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" 
+                               th:field="*{username}"
+                               class="form-control" id="username" placeholder="Username" 
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('username')}, data-errormessage=${#fields.errors('username')}"/>
+                    </div>
+                </div>
+                     <div class="form-group" th:classappend="${#fields.hasErrors('gaji')} ? 'has-error'">
+                    <label for="gaji" class="col-sm-2 control-label">Gaji</label>
+                    <div class="col-sm-10">
+                        <input type="text" 
+                               th:field="*{gaji}"
+                               class="form-control" id="gaji" placeholder="Gaji" 
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('gaji')}, data-errormessage=${#fields.errors('gaji')}"/>
+                    </div>
+                    
+                </div>
+                     <div class="form-group" th:classappend="${#fields.hasErrors('telp')} ? 'has-error'">
+                    <label for="telp" class="col-sm-2 control-label">Telp</label>
+                    <div class="col-sm-10">
+                        <input type="text" 
+                               th:field="*{telp}"
+                               class="form-control" id="telp" placeholder="Telp" 
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('telp')}, data-errormessage=${#fields.errors('telp')}"/>
+                    </div>
+                </div>
+                     <div class="form-group" th:classappend="${#fields.hasErrors('alamat')} ? 'has-error'">
+                    <label for="alamat" class="col-sm-2 control-label">Alamat</label>
+                    <div class="col-sm-10">
+                        <input type="text" 
+                               th:field="*{alamat}"
+                               class="form-control" id="alamat" placeholder="Alamat" required="required" th:attr="data-errormessage-value-missing=${#fields.errors('alamat')}, data-errormessage=${#fields.errors('alamat')}"/>
+                    </div>
+                </div>
+              <div class="form-group" th:classappend="${#fields.hasErrors('jabatan')} ? 'has-error'">
+                    <label for="jabatan" class="col-sm-2 control-label">Jabatan</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="jabatan" th:field="*{jabatan}"
+                                required="required" th:attr="data-errormessage-value-missing=${#fields.errors('jabatan')}, data-errormessage=${#fields.errors('jabatan')}">
+                          <option value="">-- Pilih --</option>
+                            <option th:each = "jabatan : ${daftarJabatan}"
+                                    th:value="${jabatan.nama_jabatan}"
+                                    th:text="${jabatan.kode} +' - '+ ${jabatan.nama_jabatan}">Default</option>
+                        </select>
+                    </div>
+                </div>
+                    <div class="form-group" th:classappend="${#fields.hasErrors('password')} ? 'has-error'">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Password"
+                               required="required" th:attr="data-errormessage-value-missing=${#fields.errors('password')}, data-errormessage=${#fields.errors('password')}"/>
+                    </div>
+                </div>
+              <div class="form-group" th:classappend="${#fields.hasErrors('role')} ? 'has-error'">
+                    <label for="role" class="col-sm-2 control-label">Role</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="role" th:field="*{role}" required="required" th:attr="data-errormessage-value-missing=${#fields.errors('role')}, data-errormessage=${#fields.errors('role')}">
+                            <option value="">-- Pilih --</option>
+                            <option value="ADM">ADM</option>
+                            <option value="OPR">OPR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+        </div>
+        </div>
+    </body>
+</html>
